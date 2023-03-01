@@ -1,5 +1,5 @@
 ﻿using Challenger.Models;
 
-Task_5 v = new Task_5();
+Menu menu = new Menu();
 
-v.start();
+menu.Execute();

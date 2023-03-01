@@ -10,7 +10,7 @@ namespace Challenger.Models
     public class Task_5 : ITask
     {
 
-        private string _value = "Patrick Assunção";
+        private string _value = "";
 
         private string ReverseString()
         {
