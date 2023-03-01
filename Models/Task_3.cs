@@ -1,9 +1,9 @@
 /* 
 
-    3) Dado um vetor que guarda o valor de faturamento diário de uma distribuidora, faça um programa, na linguagem que desejar, que calcule e retorne:
-    • O menor valor de faturamento ocorrido em um dia do mês;
-    • O maior valor de faturamento ocorrido em um dia do mês;
-    • Número de dias no mês em que o valor de faturamento diário foi superior à média mensal.
+    3) Dado um vetor que guarda o Valor de faturamento diário de uma distribuidora, faça um programa, na linguagem que desejar, que calcule e retorne:
+    • O menor Valor de faturamento ocorrido em um dia do mês;
+    • O maior Valor de faturamento ocorrido em um dia do mês;
+    • Número de dias no mês em que o Valor de faturamento diário foi superior à média mensal.
 
 */
 
@@ -24,30 +24,30 @@ namespace Challenger.Models
 
         public Task_3()
         {
-            _lowerBilledAmountAtTheDayOfMonth.valor = _maxValue;
-            _highestBilledAmountAtTheDayOfMonth.valor = 0;
+            _lowerBilledAmountAtTheDayOfMonth.Valor = _maxValue;
+            _highestBilledAmountAtTheDayOfMonth.Valor = 0;
         }
 
         private void CalculateMonth()
         {
             _dataBase.ForEach((data) =>
             {
-                if (data.valor != 0 && data.valor < _lowerBilledAmountAtTheDayOfMonth.valor)
+                if (data.Valor != 0 && data.Valor < _lowerBilledAmountAtTheDayOfMonth.Valor)
                 {
                     _lowerBilledAmountAtTheDayOfMonth = data;
                 }
 
-                if (data.valor > _highestBilledAmountAtTheDayOfMonth.valor)
+                if (data.Valor > _highestBilledAmountAtTheDayOfMonth.Valor)
                 {
                     _highestBilledAmountAtTheDayOfMonth = data;
                 }
 
-                if (data.valor == 0)
+                if (data.Valor == 0)
                 {
                     _skippedDays += 1;
                 }
 
-                _amount += data.valor;
+                _amount += data.Valor;
             });
         }
 
@@ -59,7 +59,7 @@ namespace Challenger.Models
 
             _dataBase.ForEach((data) =>
             {
-                if (data.valor > monthlyAverage)
+                if (data.Valor > monthlyAverage)
                 {
                     days += 1;
                 }
@@ -74,12 +74,12 @@ namespace Challenger.Models
             int days = GetAboveAverageDays();
 
             Console.WriteLine("O menor valor de faturamento ocorrido no mês foi: ");
-            Console.WriteLine($"Dia: {_lowerBilledAmountAtTheDayOfMonth.dia} valor: R$ {_lowerBilledAmountAtTheDayOfMonth.valor} \n");
+            Console.WriteLine($"Dia: {_lowerBilledAmountAtTheDayOfMonth.Dia} Valor: R$ {_lowerBilledAmountAtTheDayOfMonth.Valor} \n");
 
             Console.WriteLine("O maior valor de faturamento ocorrido no mês foi: ");
-            Console.WriteLine($"Dia: {_highestBilledAmountAtTheDayOfMonth.dia} valor: R$ {_highestBilledAmountAtTheDayOfMonth.valor} \n");
+            Console.WriteLine($"Dia: {_highestBilledAmountAtTheDayOfMonth.Dia} Valor: R$ {_highestBilledAmountAtTheDayOfMonth.Valor} \n");
 
-            Console.WriteLine("A quatidade de dias que valor de faturamento diário foi superior à média mensal foi de :");
+            Console.WriteLine("A quatidade de dias que Valor de faturamento diário foi superior à média mensal foi de :");
             Console.WriteLine($"{days} dias");
         }
     }
