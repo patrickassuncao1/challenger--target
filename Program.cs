@@ -1,5 +1,5 @@
 ﻿using Challenger.Models;
 
-Task_2 v = new Task_2();
+Task_3 v = new Task_3();
 
 v.start();
